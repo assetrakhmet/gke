@@ -56,7 +56,8 @@ resource "google_container_node_pool" "primary_nodes" {
     }
 
     # preemptible  = true
-    machine_type = "e2-medium"
+    machine_type = "n2-standars-2"
+    disk_size_gb = 10
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
